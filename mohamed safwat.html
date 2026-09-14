@@ -55,9 +55,7 @@
             perspective: 1000px;
         }
 
-        /* ------------------------------------
-           PRELOADER SCREEN
-        ------------------------------------ */
+        /* PRELOADER SCREEN */
         #loader {
             position: fixed;
             inset: 0;
@@ -105,9 +103,7 @@
             visibility: hidden;
         }
 
-        /* ------------------------------------
-           DYNAMIC ANIMATED LOGO
-        ------------------------------------ */
+        /* ANIMATED LOGO */
         .animated-logo-wrapper {
             position: fixed;
             z-index: 10000;
@@ -132,7 +128,6 @@
                         filter 0.6s ease;
         }
 
-        /* Flight Motion Effects */
         .animated-logo-wrapper.in-flight img {
             animation: spinFlight 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
         }
@@ -152,7 +147,6 @@
             }
         }
 
-        /* Re-attach logo to card layout after animation */
         .animated-logo-wrapper.settled {
             position: relative;
             top: auto !important;
@@ -170,7 +164,6 @@
             transform: none !important;
         }
 
-        /* Ripple impact effect when logo lands */
         .company-logo-placeholder::after {
             content: '';
             position: absolute;
@@ -194,9 +187,7 @@
             100% { transform: translate(-50%, -50%) scale(25); opacity: 0; }
         }
 
-        /* ------------------------------------
-           CARD CONTAINER & SEQUENCED CONTENT
-        ------------------------------------ */
+        /* CARD CONTAINER */
         .vcard-container {
             width: 100%;
             max-width: 410px;
@@ -254,7 +245,6 @@
             justify-content: center;
         }
 
-        /* Elements reveal after logo settles */
         .card-reveal-item {
             opacity: 0;
             transform: translateY(20px);
@@ -270,12 +260,10 @@
             filter: blur(0);
         }
 
-        /* Staggered delay for content items */
         body.content-settled .company-tagline { transition-delay: 0.05s; }
         body.content-settled .profile { transition-delay: 0.15s; }
         body.content-settled .btn-group { transition-delay: 0.25s; }
         body.content-settled .action-grid { transition-delay: 0.35s; }
-        body.content-settled .footer-note { transition-delay: 0.45s; }
 
         .company-tagline {
             font-size: 0.72rem;
@@ -414,7 +402,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 11px;
-            margin-bottom: 22px;
+            margin-bottom: 0;
         }
 
         .action-card {
@@ -475,15 +463,6 @@
             color: var(--text-primary);
         }
 
-        .footer-note {
-            text-align: center;
-            font-size: 0.78rem;
-            color: var(--text-secondary);
-            border-top: 1px solid var(--border-color);
-            padding-top: 16px;
-            font-weight: 500;
-        }
-
         @media (max-width: 480px) {
             .vcard-container {
                 padding: 24px 18px;
@@ -509,21 +488,17 @@
 </head>
 <body>
 
-    <!-- Loading Screen Theme -->
     <div id="loader">
         <div class="loader-bar" id="loaderBar">
             <div class="loader-progress"></div>
         </div>
     </div>
 
-    <!-- Animated Shared Logo -->
     <div class="animated-logo-wrapper" id="animatedLogo">
         <img src="https://ahramplastic.com/wp-content/uploads/2023/02/logo-7.png" alt="Al-Ahram Group Logo" id="logoImg">
     </div>
 
-    <!-- Main Card Container -->
     <div class="vcard-container">
-        
         <div class="company-header">
             <div class="company-logo-placeholder" id="logoTarget"></div>
             <div class="company-tagline card-reveal-item">Integrated solutions in flexible and rigid packaging</div>
@@ -539,26 +514,20 @@
 
         <div class="btn-group card-reveal-item">
             <button class="btn btn-primary" onclick="downloadVCard()">
-                <span>
-                    <i class="fa-solid fa-user-plus"></i> Save Contact
-                </span>
+                <span><i class="fa-solid fa-user-plus"></i> Save Contact</span>
             </button>
 
             <a href="https://drive.google.com/file/d/1ASYseofnJOpNZZTXrtP2qb852B1kdrJq/view?usp=drive_link" target="_blank" class="btn btn-secondary">
-                <span>
-                    <i class="fa-solid fa-file-pdf"></i> View Product Catalog
-                </span>
+                <span><i class="fa-solid fa-file-pdf"></i> View Product Catalog</span>
             </a>
 
             <a href="https://ahramplastic.com/" target="_blank" class="btn btn-secondary">
-                <span>
-                    <i class="fa-solid fa-globe"></i> Visit Official Website
-                </span>
+                <span><i class="fa-solid fa-globe"></i> Visit Official Website</span>
             </a>
         </div>
 
         <div class="action-grid card-reveal-item">
-            <a href="https://wa.me/201275377725?text=Hello%20Mr.%20Mohamed,%20I'd%20like%20to%20inquire%20about%20Al-Ahram%20packaging%20products." class="action-card" target="_blank">
+            <a href="https://wa.me/201275377725?text=Hello,%20I'd%20like%20to%20inquire%20about%20Al-Ahram%20packaging%20products." class="action-card" target="_blank">
                 <i class="fa-brands fa-whatsapp action-icon"></i>
                 <div class="action-text">
                     <span class="action-label">WhatsApp</span>
@@ -566,7 +535,7 @@
                 </div>
             </a>
 
-            <a href="tel:+201275377725" class="action-card">
+            <a href="tel:(+2) 012 75 377 725" class="action-card">
                 <i class="fa-solid fa-phone action-icon"></i>
                 <div class="action-text">
                     <span class="action-label">Call</span>
@@ -582,7 +551,7 @@
                 </div>
             </a>
 
-            <a href="https://www.linkedin.com/company/al-ahram-plastic-co-/posts/?skipRedirect=true" class="action-card" target="_blank">
+            <a href="https://www.linkedin.com/company/al-ahram-plastic-co-/posts/?feedView=all" class="action-card" target="_blank">
                 <i class="fa-brands fa-linkedin-in action-icon"></i>
                 <div class="action-text">
                     <span class="action-label">LinkedIn</span>
@@ -606,10 +575,6 @@
                 </div>
             </a>
         </div>
-
-        <div class="footer-note card-reveal-item">
-            Al-Ahram Group — INTEGRATED SOLUTION IN FLEXIBLE AND RIGID PACKAGING
-        </div>
     </div>
 
     <script>
@@ -620,48 +585,41 @@
                 const logoTarget = document.getElementById('logoTarget');
                 const loaderBar = document.getElementById('loaderBar');
 
-                // Step 1: Hide loader progress bar & fade in card shell
                 loaderBar.style.opacity = '0';
                 document.body.classList.add('card-visible');
 
-                // Step 2: Compute target coordinates dynamically
                 const targetRect = logoTarget.getBoundingClientRect();
 
-                // Step 3: Trigger 3D Spin, Arc Flight & Motion Blur
                 animatedLogo.classList.add('in-flight');
                 animatedLogo.style.top = `${targetRect.top + targetRect.height / 2}px`;
                 animatedLogo.style.left = `${targetRect.left + targetRect.width / 2}px`;
                 logoImg.style.width = '175px';
 
-                // Step 4: Handle Landing & Ripple Impact
                 setTimeout(() => {
                     document.body.classList.add('loader-hidden');
                     document.body.classList.add('logo-landed');
 
-                    // Settle logo in exact DOM position inside the header
                     logoTarget.appendChild(animatedLogo);
                     animatedLogo.classList.remove('in-flight');
                     animatedLogo.classList.add('settled');
 
-                    // Step 5: Unveil card contents with staggered effects
                     setTimeout(() => {
                         document.body.classList.add('content-settled');
                     }, 100);
-                }, 900); // Matches the flight duration (0.9s)
+                }, 900);
             }, 600);
         });
 
         function downloadVCard() {
             const vcardData = `BEGIN:VCARD
 VERSION:3.0
-N:Safwat;Mohamed;Mr.;;
+N:Mohamed Safwat;Mr.;;;
 FN:Mr. Mohamed Safwat
 TITLE:Manufacturing Division G.M - Upper Egypt
 ORG:Al-Ahram Group
-TEL;TYPE=CELL:+201275377725
+TEL;TYPE=CELL:(+2) 012 75 377 725
 EMAIL:mohamed.safwat@ahramplastic.com
 URL:https://ahramplastic.com/
-URL;TYPE=LinkedIn:https://www.linkedin.com/company/al-ahram-plastic-co-/posts/?skipRedirect=true
 URL;TYPE=Location:https://maps.app.goo.gl/pbsaNYLEP9VZ75um6?g_st=aw
 END:VCARD`;
 
@@ -669,7 +627,7 @@ END:VCARD`;
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', 'Mr_Mohamed_Safwat_Contact.vcf');
+            link.setAttribute('download', 'mr-mohamed-safwat_Contact.vcf');
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
